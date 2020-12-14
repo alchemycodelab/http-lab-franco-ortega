@@ -15,7 +15,7 @@ describe('app routes', () => {
 
   it('POST to /echo responds with status code 200 and plain text with the request body', async() => {
     const response = await request(app)
-      .get('/');
+      .post('/echo');
 
     expect(response.text).toEqual({
       status: 200,
