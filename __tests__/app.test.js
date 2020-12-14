@@ -10,7 +10,8 @@ describe('app routes', () => {
     const response = await request(app)
       .get('/');
 
-    expect(response).toEqual('hi');
+    expect(response.text).toEqual('hi');
   });
+
 
 });
