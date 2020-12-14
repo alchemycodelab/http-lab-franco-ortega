@@ -1,5 +1,7 @@
 const request = require('supertest');
 const app = require('../lib/app');
+const createResponse = require('../lib/utils/createResponse');
+const parseRequest = require('../lib/utils/parseRequest');
 
 describe('app routes', () => {
 //   it('sample fake test', () => {
@@ -15,7 +17,8 @@ describe('app routes', () => {
 
   it('POST to /echo responds with status code 200 and plain text with the request body', async() => {
     const response = await request(app)
-      .post('/echo');
+      .post('/echo')
+      .send('hi');
 
     expect(response.text).toEqual({
       status: 200,
