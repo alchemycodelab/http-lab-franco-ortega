@@ -13,5 +13,16 @@ describe('app routes', () => {
     expect(response.text).toEqual('hi');
   });
 
+  it('POST to /echo responds with status code 200 and plain text with the request body', async() => {
+    const response = await request(app)
+      .get('/');
+
+    expect(response.text).toEqual({
+      status: 200,
+      body: 'hi',
+      contentType: 'text/plain'
+    });
+  });
+
 
 });
