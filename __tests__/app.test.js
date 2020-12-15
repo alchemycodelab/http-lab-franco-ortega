@@ -4,10 +4,6 @@ const createResponse = require('../lib/utils/createResponse');
 const parseRequest = require('../lib/utils/parseRequest');
 
 describe('app routes', () => {
-//   it('sample fake test', () => {
-//     expect(true).toEqual(true);
-//   });
-
   it('GET hi from /', async() => {
     const response = await request(app)
       .get('/');
@@ -37,7 +33,6 @@ describe('app routes', () => {
     expect(response.text).toEqual('<h1>green</h1>');
   });
 
-
   it('GET html with an h1 and the word blue from /blue', async() => {
     const response = await request(app)
       .get('/blue');
@@ -51,7 +46,5 @@ describe('app routes', () => {
 
     expect(response.text).toEqual('Not Found');
   });
-
-
 
 });
