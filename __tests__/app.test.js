@@ -20,11 +20,7 @@ describe('app routes', () => {
       .post('/echo')
       .send('hi');
 
-    expect(response.text).toEqual({
-      status: 200,
-      body: 'hi',
-      contentType: 'text/plain'
-    });
+    expect(response.text).toEqual('hi');
   });
 
 
