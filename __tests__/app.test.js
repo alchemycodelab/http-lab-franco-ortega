@@ -38,5 +38,13 @@ describe('app routes', () => {
   });
 
 
+  it('GET html with an h1 and the word blue from /blue', async() => {
+    const response = await request(app)
+      .get('/blue');
+
+    expect(response.text).toEqual('<h1>blue</h1>');
+  });
+
+
 
 });
